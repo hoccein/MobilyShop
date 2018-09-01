@@ -178,7 +178,6 @@ public class InsertDataActivity extends AppCompatActivity {
                 Log.i("myapi", "onFailure message: "+ t.getMessage());
             }
         });
-
     }
 
     public void update(){
