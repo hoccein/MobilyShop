@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_padding_item_drawer">15dp</dimen>
+    <dimen name="iv_margin_right_drawer_item">10dp</dimen>
+    <dimen name="tv_margin_right_drawer_item">20dp</dimen>
+
+    <!-- sign up  items -->
+    <dimen name="padding_EditText_SignUp">7dp</dimen>
+    <dimen name="margin_top_TextInputEditText">5dp</dimen>
+</resources>

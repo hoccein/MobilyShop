@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Shopping</string>
+    <string name="title_shopping">فروشگاه</string>
+    <string name="forgotten_password">دریافت رمز عبور جدید!</string>
+    <string name="signup">ثبت نام</string>
+
+
+    <!--drawer items-->
+    <string name="home_drawer_item">صفحه اصلی</string>
+    <string name="category_drawer_item">محصولات</string>
+    <string name="buy_basket_drawer_item">سبد خرید</string>
+    <string name="like_drawer_item">علاقه مندی ها</string>
+    <string name="buy_list_drawer_item">سفارشات من</string>
+    <string name="account_drawer_item">حساب کاربری</string>
+
+
+    <string name="testText">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda beatae blanditiis dicta dolorum, esse fuga illo magnam magni maiores molestias, nisi odit, quaerat quibusdam quod reprehenderit tenetur voluptas voluptates?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore iusto nulla quia tenetur. Blanditiis cumque illum impedit nulla odit reiciendis suscipit veritatis? Alias aliquid eaque eligendi modi quis, soluta!lorem    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque dicta dolor, dolorum esse et labore laborum minus molestiae nemo, nulla numquam odit, quidem repellat sapiente sint sunt tempora veritatis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta, dignissimos doloremque dolores, dolorum ducimus eum eveniet explicabo laborum magnam quas quia voluptatibus! Aut doloremque ipsam, laudantium sit temporibus tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci delectus deserunt doloremque earum ipsa iste laboriosam nam natus nemo non officia quidem, similique sit sunt suscipit totam ullam vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cum cupiditate dolore dolores eius et expedita iusto labore nam nulla perspiciatis quia sed similique sint unde voluptas voluptatem. At, ipsa!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda beatae blanditiis dicta dolorum, esse fuga illo magnam magni maiores molestias, nisi odit, quaerat quibusdam quod reprehenderit tenetur voluptas voluptates?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore iusto nulla quia tenetur. Blanditiis cumque illum impedit nulla odit reiciendis suscipit veritatis? Alias aliquid eaque eligendi modi quis, soluta!lorem    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque dicta dolor, dolorum esse et labore laborum minus molestiae nemo, nulla numquam odit, quidem repellat sapiente sint sunt tempora veritatis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta, dignissimos doloremque dolores, dolorum ducimus eum eveniet explicabo laborum magnam quas quia voluptatibus! Aut doloremque ipsam, laudantium sit temporibus tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci delectus deserunt doloremque earum ipsa iste laboriosam nam natus nemo non officia quidem, similique sit sunt suscipit totam ullam vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cum cupiditate dolore dolores eius et expedita iusto labore nam nulla perspiciatis quia sed similique sint unde voluptas voluptatem. At, ipsa!
+    </string>
+
+
+</resources>

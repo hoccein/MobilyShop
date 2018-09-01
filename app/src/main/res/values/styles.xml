@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- for change underline of EditText -->
+        <item name="colorControlNormal">@color/gray_root</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">#ffdd00</item>
+    </style>
+    
+    <style name="MyHintTextInput" parent="TextAppearance.Design.Hint" >
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/gray_root</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+
+
+</resources>
