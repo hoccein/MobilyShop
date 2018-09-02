@@ -95,7 +95,7 @@ public class PhoneDAO {
         //make a list of random numbers without duplicate numbers
         HashSet hashSet = new HashSet();
         while (hashSet.size() < 5){
-            hashSet.add(MyUtils.randomNumber(list.size()));
+            hashSet.add(MyUtils.randomNumber(list.size()-1));
         }
 
         Iterator iterator = hashSet.iterator();
