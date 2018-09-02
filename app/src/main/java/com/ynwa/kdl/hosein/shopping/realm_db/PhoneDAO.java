@@ -5,8 +5,12 @@ import android.util.Log;
 import com.ynwa.kdl.hosein.shopping.MyUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.WeakHashMap;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -85,14 +89,23 @@ public class PhoneDAO {
 
     public List<Phone> findRandomPhones(){
 
-        long randomId = 0;
         List<Phone> randomList = new ArrayList<>();
         RealmResults<Phone> list = realm.where(Phone.class).findAll();
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            randomId = random.nextInt(list.size());
-            randomList.add(findPhoneById(randomId));
+
+        //make a list of random numbers without duplicate numbers
+        HashSet hashSet = new HashSet();
+        while (hashSet.size() < 5){
+            hashSet.add(MyUtils.randomNumber(list.size()));
         }
+
+        Iterator iterator = hashSet.iterator();
+
+        while (iterator.hasNext()){
+            String strId = iterator.next().toString();
+            long id = Long.parseLong(strId);
+            randomList.add( findPhoneById(id) );
+        }
+
         return randomList;
     }
 
