@@ -73,41 +73,39 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
         holder.setIsRecyclable(false);
 
         final Phone item = items.get(position);
+        if(item != null){
 
-
-        if(item.getImage() != null){
             picasso.load(item.getImage())
                     .placeholder(R.drawable.ic_no_image)
                     .error(R.drawable.ic_no_image)
                     .into(holder.ivPic);
-        }
 
-        /*Picasso.get()
+             /*Picasso.get()
                 .load(items.get(position).getLargeImage())
                 .error(R.drawable.ic_no_image)
                 .into(holder.ivPic);*/
-        holder.tvName.setText(item.getName());
-        holder.tvBrand.setText(item.getBrand());
+            holder.tvName.setText(item.getName());
+            holder.tvBrand.setText(item.getBrand());
 
-        if (item.getPrice() > 0) {
-            holder.tvPrice.setText( MyUtils.priceSeprator(item.getPrice())+ " تومان");
-        }
-        else {
-            holder.tvPrice.setText(item.getPrice()+ " -----");
-        }
-
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, ""+ item.getName(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, ProfileActivity.class);
-                PhoneParcel phoneParcel = convertPhoneTOPhoneParcel(item);
-                intent.putExtra(ProfileActivity.PHONE_PROFILE, phoneParcel);
-                context.startActivity(intent);
+            if (item.getPrice() > 0) {
+                holder.tvPrice.setText( MyUtils.priceSeprator(item.getPrice())+ " تومان");
             }
-        });
+            else {
+                holder.tvPrice.setText(item.getPrice()+ " -----");
+            }
 
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, ""+ item.getName(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, ProfileActivity.class);
+                    PhoneParcel phoneParcel = convertPhoneTOPhoneParcel(item);
+                    intent.putExtra(ProfileActivity.PHONE_PROFILE, phoneParcel);
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
