@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -249,7 +250,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void showSuggestPhones(List<Phone> phones) {
-
+        
         adapterSuggest.setDataList(phones);
         rcvSuggestPhones.setAdapter(adapterSuggest);
         rcvSuggestPhones.setHasFixedSize(true);
