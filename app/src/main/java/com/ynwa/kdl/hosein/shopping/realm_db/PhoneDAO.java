@@ -4,6 +4,10 @@ import android.util.Log;
 
 import com.ynwa.kdl.hosein.shopping.MyUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
@@ -76,8 +80,20 @@ public class PhoneDAO {
             year--;
             return findNewPhones(year);
         }
-
         return phones;
+    }
+
+    public List<Phone> findRandomPhones(){
+
+        long randomId = 0;
+        List<Phone> randomList = new ArrayList<>();
+        RealmResults<Phone> list = realm.where(Phone.class).findAll();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            randomId = random.nextInt(list.size());
+            randomList.add(findPhoneById(randomId));
+        }
+        return randomList;
     }
 
     public Phone findPhoneById(long id){
