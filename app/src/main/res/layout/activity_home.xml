@@ -59,7 +59,7 @@
                         app:piv_padding="8dp"
                         app:piv_radius="3dp"
                         app:piv_selectedColor="@color/colorAccent"
-                        app:piv_unselectedColor="@color/gray_alpha"
+                        app:piv_unselectedColor="@color/white"
                         app:piv_viewPager="@id/view_Pager" />
 
                 </android.support.constraint.ConstraintLayout>
