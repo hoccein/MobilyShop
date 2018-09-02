@@ -8,12 +8,14 @@ import com.ynwa.kdl.hosein.shopping.retrofit.ApiServiceWalMarket;
 import com.ynwa.kdl.hosein.shopping.retrofit.model.Search.Search;
 import com.ynwa.kdl.hosein.shopping.retrofit.model.paginated.Paginated;
 
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 public class HomePresenter implements Home.Presenter {
 
@@ -30,12 +32,14 @@ public class HomePresenter implements Home.Presenter {
 
 
     @Override
-    public void reqAllPhones() {
-        mModel.fetchAllPhones(new Home.Model.CallbackAllPhones() {
+    public void reqNewPhones() {
+
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        mModel.fetchNewPhones(2019, new Home.Model.CallbackAllPhones() {
             @Override
             public void allPhones(RealmResults<Phone> phones) {
                 if (phones.size() > 0){
-                    mView.showAllPhones(phones);
+                    mView.showNewPhones(phones);
                 }
             }
         });

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +55,6 @@ import butterknife.ButterKnife;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import io.reactivex.functions.Consumer;
 import io.realm.RealmResults;
-import io.realm.Sort;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -80,9 +78,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.ib_toolbar_menu)
     ImageButton menuToolbar;
 
-    @BindView(R.id.iv_picasso)
-    ImageView ivImage;
-
     @BindView(R.id.av_load)
     AVLoadingIndicatorView avLoading;
 
@@ -100,6 +95,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @BindView(R.id.layout_rcv_one)
     RelativeLayout layout_rcv_one;
+
+    @BindView(R.id.tv_all_home)
+    TextView tvAll_newPhonesRow;
 
 
 
@@ -199,7 +197,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //recycler 1
         showLoading();
-        mPresenter.reqAllPhones();
+        mPresenter.reqNewPhones();
 
 
     }
@@ -225,9 +223,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void showAllPhones(RealmResults<Phone> phones) {
-
-        phones = phones.sort("price", Sort.DESCENDING);
+    public void showNewPhones(RealmResults<Phone> phones) {
+        if (phones.size()<10){
+            tvAll_newPhonesRow.setVisibility(View.INVISIBLE);
+        }
         adapterTest.setDataList(phones);
         recyclerView.setAdapter(adapterTest);
         recyclerView.setHasFixedSize(true);
@@ -313,11 +312,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(Call<Items> call, Response<Items> response) {
                 if (response.body() != null) {
 
-                    Picasso.get()
-                            .load(response.body().getLargeImage())
-                            .placeholder(R.mipmap.ic_launcher_round)
-                            .error(R.mipmap.ic_launcher)
-                            .into(ivImage);
+
                 }
                 else
                 {

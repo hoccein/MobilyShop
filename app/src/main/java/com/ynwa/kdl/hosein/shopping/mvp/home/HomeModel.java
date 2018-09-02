@@ -20,9 +20,10 @@ public class HomeModel implements Home.Model {
     private PhoneDAO phoneDAO = new PhoneDAO();
 
 
+
     @Override
-    public void fetchAllPhones(CallbackAllPhones callback) {
-        callback.allPhones( phoneDAO.findAllPhones() );
+    public void fetchNewPhones(int year, CallbackAllPhones callback) {
+        callback.allPhones(phoneDAO.findNewPhones(year));
     }
 
     @Override
