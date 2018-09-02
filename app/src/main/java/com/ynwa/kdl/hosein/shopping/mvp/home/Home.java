@@ -46,7 +46,7 @@ public interface Home {
         void init();
         void listeners();
         void showNewPhones(RealmResults<Phone> phones);
-        void showSuggestPhones(RealmResults<Phone> phones);
+        void showSuggestPhones(List<Phone> phones);
         Consumer<Search> searchFlowable();
         Consumer<Paginated> searchFlowablePaginated();
         void setDataToRecycler(MyRCAdapter adapter);

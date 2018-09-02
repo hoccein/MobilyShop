@@ -27,7 +27,7 @@ public class HomeModel implements Home.Model {
     }
 
     @Override
-    public void fetchSuggestPhones(CallbackAllPhones callback) {
+    public void fetchSuggestPhones(CallbackRandomPhones callback) {
         callback.allPhones(phoneDAO.findRandomPhones());
     }
 

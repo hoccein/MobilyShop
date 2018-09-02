@@ -248,7 +248,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void showSuggestPhones(RealmResults<Phone> phones) {
+    public void showSuggestPhones(List<Phone> phones) {
 
         adapterSuggest.setDataList(phones);
         rcvSuggestPhones.setAdapter(adapterSuggest);

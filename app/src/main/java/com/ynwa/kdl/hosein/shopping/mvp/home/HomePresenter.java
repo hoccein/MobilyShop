@@ -9,6 +9,7 @@ import com.ynwa.kdl.hosein.shopping.retrofit.model.Search.Search;
 import com.ynwa.kdl.hosein.shopping.retrofit.model.paginated.Paginated;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
@@ -47,9 +48,10 @@ public class HomePresenter implements Home.Presenter {
 
     @Override
     public void reqSuggestPhones() {
-        mModel.fetchSuggestPhones(new Home.Model.CallbackAllPhones() {
+        mModel.fetchSuggestPhones(new Home.Model.CallbackRandomPhones() {
             @Override
-            public void allPhones(RealmResults<Phone> phones) {
+            public void allPhones(List<Phone> phones) {
+
                 mView.showSuggestPhones(phones);
             }
         });
