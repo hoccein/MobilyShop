@@ -33,7 +33,7 @@ import io.realm.RealmResults;
 public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
 
     Context context;
-    RealmResults<Phone> items;
+    List<Phone> items;
     Picasso picasso;
 
 
@@ -44,19 +44,19 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
         this.picasso = picasso;
     }
 
-    public MyRCAdapter(Context context, RealmResults<Phone> items) {
+    public MyRCAdapter(Context context, List<Phone> items) {
         this.context = context;
         this.items = items;
     }
 
-    public MyRCAdapter(Context context, RealmResults<Phone> items, Picasso picasso) {
+    public MyRCAdapter(Context context, List<Phone> items, Picasso picasso) {
         this.context = context;
         this.items = items;
         this.picasso = picasso;
     }
 
 
-    public void setDataList(RealmResults<Phone> items){
+    public void setDataList(List<Phone> items){
         this.items = items;
     }
 
