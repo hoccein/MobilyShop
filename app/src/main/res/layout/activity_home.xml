@@ -158,6 +158,46 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="40dp" />
 
+                <RelativeLayout
+                    android:id="@+id/layout_rcv_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="13dp"
+                        android:layout_marginTop="16dp"
+                        android:text="جدید ترین محصولات"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_suggest_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="13dp"
+                        android:padding="3dp"
+                        android:text="همه"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rc_suggest_phones__home_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp" />
+
+
+
 
             </LinearLayout>
 
