@@ -15,6 +15,7 @@ public interface Home {
     interface Model
     {
         void fetchNewPhones(int year, CallbackAllPhones callback);
+        void fetchSuggestPhones(CallbackAllPhones callback);
         void getTestRX(String txtSearch, ApiServiceWalMarket apiService, CallbackFlowableData callback);
         void getSearchDataRX(String txtSearch, CallbackFlowableData callback);
         void getSearchData(CallBackData callBackData);
@@ -39,6 +40,7 @@ public interface Home {
         void init();
         void listeners();
         void showNewPhones(RealmResults<Phone> phones);
+        void showSuggestPhones(RealmResults<Phone> phones);
         Consumer<Search> searchFlowable();
         Consumer<Paginated> searchFlowablePaginated();
         void setDataToRecycler(MyRCAdapter adapter);
@@ -50,6 +52,7 @@ public interface Home {
     interface Presenter
     {
         void reqNewPhones();
+        void reqSuggestPhones();
         void reqTestRX(String s, ApiServiceWalMarket apiService);
         void reqDataFromServerRX(String s);
         void reqDataFromServer();
