@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.indicator)
     PageIndicatorView indicator;
 
-    @BindView(R.id.recycler_test)
+    @BindView(R.id.rc_new_phones__home_activity)
     RecyclerView recyclerView;
 
     @BindView(R.id.nav_drawer)
