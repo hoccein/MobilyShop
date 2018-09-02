@@ -73,10 +73,14 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
         holder.setIsRecyclable(false);
 
         final Phone item = items.get(position);
-        picasso.load(item.getImage())
-                .placeholder(R.drawable.ic_no_image)
-                .error(R.drawable.ic_no_image)
-                .into(holder.ivPic);
+
+
+        if(item.getImage() != null){
+            picasso.load(item.getImage())
+                    .placeholder(R.drawable.ic_no_image)
+                    .error(R.drawable.ic_no_image)
+                    .into(holder.ivPic);
+        }
 
         /*Picasso.get()
                 .load(items.get(position).getLargeImage())
