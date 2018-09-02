@@ -13,6 +13,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -29,6 +30,8 @@ public class MyUtils {
     public static final String PREF_LOGIN_STATUS = "status";
     private static final String PREF_NAME = "user_name";
     private static final String PREF_EMAIL = "user_email";
+
+    public static Random random = new Random();
 
 
     public static void saveUserInfoToPref(Context context, UserInfo userInfo){
@@ -178,6 +181,11 @@ public class MyUtils {
         DecimalFormat df = new DecimalFormat("##,###,###", dfs);
 
         return df.format( Integer.valueOf(price) );
+    }
+
+    public static int randomNumber(int max){
+
+        return random.nextInt(max);
     }
 
 
