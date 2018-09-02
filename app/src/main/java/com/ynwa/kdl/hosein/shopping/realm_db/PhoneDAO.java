@@ -6,6 +6,7 @@ import com.ynwa.kdl.hosein.shopping.MyUtils;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 public class PhoneDAO {
 
@@ -64,6 +65,19 @@ public class PhoneDAO {
 
     public RealmResults<Phone> findAllPhones(){
         return realm.where(Phone.class).findAll();
+    }
+
+    public RealmResults<Phone> findNewPhones(int year){
+        RealmResults<Phone> phones = realm.where(Phone.class).equalTo("year", year).findAll().sort("price", Sort.DESCENDING);
+
+        // check any mobile is exist in current year
+        //if not exist get last year
+        if (phones.size()==0) {
+            year--;
+            return findNewPhones(year);
+        }
+
+        return phones;
     }
 
     public Phone findPhoneById(long id){
