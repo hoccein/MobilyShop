@@ -90,7 +90,7 @@ public class PhoneDAO {
     public List<Phone> findRandomPhones(){
 
         List<Phone> randomList = new ArrayList<>();
-        RealmResults<Phone> list = realm.where(Phone.class).findAll();
+        RealmResults<Phone> list = findAllPhones();
 
         //make a list of random numbers without duplicate numbers
         HashSet hashSet = new HashSet();
@@ -102,8 +102,8 @@ public class PhoneDAO {
 
         while (iterator.hasNext()){
             String strId = iterator.next().toString();
-            long id = Long.parseLong(strId);
-            randomList.add( findPhoneById(id) );
+            int id = Integer.parseInt(strId);
+            randomList.add( list.get(id) );
         }
 
         return randomList;
