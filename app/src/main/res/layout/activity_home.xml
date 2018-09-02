@@ -138,7 +138,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_all_home"
+                        android:id="@+id/tv_all__new_phones_row__home_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -170,13 +170,13 @@
                         android:layout_marginBottom="5dp"
                         android:layout_marginRight="13dp"
                         android:layout_marginTop="16dp"
-                        android:text="جدید ترین محصولات"
+                        android:text="محصولات پیشنهادی"
                         android:textColor="@color/gray_dark"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_suggest_home"
+                        android:id="@+id/tv_all__suggest_phones_row__home_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"

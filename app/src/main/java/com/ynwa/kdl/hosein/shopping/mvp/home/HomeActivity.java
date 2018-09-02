@@ -87,17 +87,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.indicator)
     PageIndicatorView indicator;
 
+    @BindView(R.id.layout_rcv_one)
+    RelativeLayout layout_rcv_one;
+    @BindView(R.id.tv_all__new_phones_row__home_activity)
+    TextView tvAll_newPhonesRow;
     @BindView(R.id.rc_new_phones__home_activity)
-    RecyclerView recyclerView;
+    RecyclerView rcvNewPhones;
+
+    @BindView(R.id.layout_rcv_two)
+    RelativeLayout layout_rcv_two;
+    @BindView(R.id.tv_all__suggest_phones_row__home_activity)
+    TextView tvAll_SuggestPhonesRow;
+    @BindView(R.id.rc_suggest_phones__home_activity)
+    RecyclerView rcvSuggestPhones;
 
     @BindView(R.id.nav_drawer)
      View nav_drawer_layout;
-
-    @BindView(R.id.layout_rcv_one)
-    RelativeLayout layout_rcv_one;
-
-    @BindView(R.id.tv_all_home)
-    TextView tvAll_newPhonesRow;
 
 
 
@@ -109,6 +114,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Inject
     MyRCAdapter adapterTest;
+
+
 
     private DrawerLayoutItems drawerLayoutItems;
     private List<Drawable> imageList = new ArrayList<>();
@@ -195,10 +202,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         timer.scheduleAtFixedRate(new SliderTimer(), 3000, 6000);
 
 
-        //recycler 1
+        //row NewPhones
+        goneRowNewPhones();
+        goneRowSuggestPhones();
         showLoading();
         mPresenter.reqNewPhones();
-
 
     }
 
@@ -209,8 +217,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         mPresenter = new HomePresenter(this, this);
 
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rcvNewPhones.setHasFixedSize(true);
+        rcvNewPhones.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         imageList.add(getResources().getDrawable(R.drawable.samsung));
         imageList.add(getResources().getDrawable(R.drawable.huawei));
@@ -228,8 +236,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             tvAll_newPhonesRow.setVisibility(View.INVISIBLE);
         }
         adapterTest.setDataList(phones);
-        recyclerView.setAdapter(adapterTest);
-        recyclerView.setHasFixedSize(true);
+        rcvNewPhones.setAdapter(adapterTest);
+        rcvNewPhones.setHasFixedSize(true);
+
         hideLoading();
     }
 
@@ -266,7 +275,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });*/
     }
 
-
     public Consumer<Paginated> searchFlowablePaginated() {
         return new Consumer<Paginated>() {
 
@@ -278,8 +286,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 /*adapterTest.setDataList(limitedList);
-                recyclerView.setAdapter(adapterTest);
-                recyclerView.setHasFixedSize(true);
+                rcvNewPhones.setAdapter(adapterTest);
+                rcvNewPhones.setHasFixedSize(true);
                 hideLoading();*/
             }
         };
@@ -297,8 +305,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 adapterTest.setDataList(limitedList);
-                recyclerView.setAdapter(adapterTest);
-                recyclerView.setHasFixedSize(true);
+                rcvNewPhones.setAdapter(adapterTest);
+                rcvNewPhones.setHasFixedSize(true);
                 hideLoading();*/
             }
         };
@@ -395,7 +403,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void setDataToRecycler(MyRCAdapter adapter) {
-        recyclerView.setAdapter(adapter);
+        rcvNewPhones.setAdapter(adapter);
     }
 
     @Override
@@ -406,8 +414,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void showLoading() {
         avLoading.show();
-        layout_rcv_one.setVisibility(View.GONE);
-        recyclerView.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -416,10 +423,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
            @Override
            public void run() {
                avLoading.hide();
-               layout_rcv_one.setVisibility(View.VISIBLE);
-               recyclerView.setVisibility(View.VISIBLE);
+               visibleRowNewPhones();
+               visibleRowSuggestPhones();
            }
        }, 1500);
+    }
+
+    public void goneRowNewPhones(){
+        layout_rcv_one.setVisibility(View.GONE);
+        rcvNewPhones.setVisibility(View.GONE);
+    }
+
+    public void visibleRowNewPhones(){
+        layout_rcv_one.setVisibility(View.VISIBLE);
+        rcvNewPhones.setVisibility(View.VISIBLE);
+    }
+
+    public void goneRowSuggestPhones(){
+        layout_rcv_two.setVisibility(View.GONE);
+        rcvSuggestPhones.setVisibility(View.GONE);
+    }
+
+    public void visibleRowSuggestPhones(){
+        layout_rcv_two.setVisibility(View.VISIBLE);
+        rcvSuggestPhones.setVisibility(View.VISIBLE);
     }
 
     private class SliderTimer extends TimerTask{
@@ -436,7 +463,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             });
-
         }
     }
 
