@@ -23,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ProfileActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener{
 
@@ -113,6 +114,11 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
         else
             tvDescription.setText(phone.getDesc());
 
+    }
+
+    @OnClick({R.id.ic_back_toolbar_profile})
+    public void btnBack(){
+        finish();
     }
 
 
