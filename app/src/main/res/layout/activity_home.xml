@@ -156,7 +156,7 @@
                     android:id="@+id/rc_new_phones__home_activity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp" />
+                    android:layout_marginBottom="10dp" />
 
                 <RelativeLayout
                     android:id="@+id/layout_rcv_two"
