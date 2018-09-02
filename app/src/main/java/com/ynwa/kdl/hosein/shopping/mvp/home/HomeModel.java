@@ -27,6 +27,11 @@ public class HomeModel implements Home.Model {
     }
 
     @Override
+    public void fetchSuggestPhones(CallbackAllPhones callback) {
+        callback.allPhones(phoneDAO.findRandomPhones());
+    }
+
+    @Override
     public void getTestRX(String txtSearch, ApiServiceWalMarket apiService, CallbackFlowableData callback) {
         //callback.getFlowable(apiService.getItemSearchRX(txtSearch,Variables.API_JSON_DATA_FORMAT, Variables.API_KEY));
         callback.getFlowable(apiService.samsungItemSearchRX(

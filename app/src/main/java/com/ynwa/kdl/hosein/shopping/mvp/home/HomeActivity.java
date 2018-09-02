@@ -114,6 +114,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Inject
     MyRCAdapter adapterTest;
+    @Inject
+    MyRCAdapter adapterSuggest;
 
 
 
@@ -207,6 +209,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         goneRowSuggestPhones();
         showLoading();
         mPresenter.reqNewPhones();
+        mPresenter.reqSuggestPhones();
 
     }
 
@@ -219,6 +222,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         rcvNewPhones.setHasFixedSize(true);
         rcvNewPhones.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        rcvSuggestPhones.setHasFixedSize(true);
+        rcvSuggestPhones.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         imageList.add(getResources().getDrawable(R.drawable.samsung));
         imageList.add(getResources().getDrawable(R.drawable.huawei));
@@ -237,7 +243,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         adapterTest.setDataList(phones);
         rcvNewPhones.setAdapter(adapterTest);
-        rcvNewPhones.setHasFixedSize(true);
+
+        hideLoading();
+    }
+
+    @Override
+    public void showSuggestPhones(RealmResults<Phone> phones) {
+
+        adapterSuggest.setDataList(phones);
+        rcvSuggestPhones.setAdapter(adapterSuggest);
+        rcvSuggestPhones.setHasFixedSize(true);
 
         hideLoading();
     }

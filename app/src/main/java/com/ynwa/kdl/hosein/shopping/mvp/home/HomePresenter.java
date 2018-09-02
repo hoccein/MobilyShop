@@ -35,7 +35,7 @@ public class HomePresenter implements Home.Presenter {
     public void reqNewPhones() {
 
         int year = Calendar.getInstance().get(Calendar.YEAR);
-        mModel.fetchNewPhones(2019, new Home.Model.CallbackAllPhones() {
+        mModel.fetchNewPhones(year, new Home.Model.CallbackAllPhones() {
             @Override
             public void allPhones(RealmResults<Phone> phones) {
                 if (phones.size() > 0){
@@ -43,6 +43,17 @@ public class HomePresenter implements Home.Presenter {
                 }
             }
         });
+    }
+
+    @Override
+    public void reqSuggestPhones() {
+        mModel.fetchSuggestPhones(new Home.Model.CallbackAllPhones() {
+            @Override
+            public void allPhones(RealmResults<Phone> phones) {
+                mView.showSuggestPhones(phones);
+            }
+        });
+
     }
 
     @Override
