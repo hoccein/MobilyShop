@@ -1,5 +1,6 @@
 package com.ynwa.kdl.hosein.shopping.mvp.profile;
 
+import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.rd.PageIndicatorView;
 import com.ynwa.kdl.hosein.shopping.MyUtils;
 import com.ynwa.kdl.hosein.shopping.R;
+import com.ynwa.kdl.hosein.shopping.activity_without_mvp.PhoneDetailActivity;
 import com.ynwa.kdl.hosein.shopping.adapter.CustomViewPagerAdapter;
 import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
 
@@ -22,6 +24,8 @@ import butterknife.OnClick;
 public class ProfileActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener{
 
     public static final String PHONE_PROFILE = "phone_item_profile";
+
+    private PhoneParcel phone;
 
     @BindView(R.id.appbar_profile)
     AppBarLayout appBar;
@@ -41,6 +45,8 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
 
     @BindView(R.id.tv_info)
     TextView tvInfo;
+    @BindView(R.id.tv_more_detail__profile_activity)
+    TextView tvMoreDetail;
 
     @BindView(R.id.ic_favorite_toolbar_profile)
     ImageButton icFavorite;
@@ -78,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
 
         appBar.addOnOffsetChangedListener(this);
 
-        PhoneParcel phone = getIntent().getParcelableExtra(PHONE_PROFILE);
+        phone = getIntent().getParcelableExtra(PHONE_PROFILE);
 
         viewPager.setAdapter(new CustomViewPagerAdapter(this, phone.getOtherImg()));
 
@@ -113,6 +119,13 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
     @OnClick({R.id.ic_back_toolbar_profile})
     public void btnBack(){
         finish();
+    }
+
+    @OnClick(R.id.tv_more_detail__profile_activity)
+    public void tvMoreDetail(){
+        Intent intent = new Intent(this, PhoneDetailActivity.class);
+        intent.putExtra(PHONE_PROFILE, phone);
+        startActivity(intent);
     }
 
 
