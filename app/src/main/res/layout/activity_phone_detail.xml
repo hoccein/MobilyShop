@@ -21,13 +21,13 @@
 
             <ImageView
                 android:id="@+id/iv_close_detail_activity"
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
                 android:src="@drawable/ic_close"
-                android:tint="@color/gray_dark"/>
+                android:tint="@color/gray_toolbar"/>
 
             <TextView
                 android:id="@+id/tv_title_detail_activity"
@@ -36,9 +36,9 @@
                 android:layout_toLeftOf="@+id/iv_close_detail_activity"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/gray_toolbar"
+                android:textColor="@color/gray"
                 android:textStyle="bold"
-                android:textSize="14sp"/>
+                android:textSize="16sp"/>
 
         </RelativeLayout>
 
@@ -56,24 +56,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="30dp"
             android:background="@color/gray_root"
             android:gravity="right">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/gray_dark"
-                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:text="مشخصات عمومی"
                 android:textSize="@dimen/title_size"
-                android:text="مشخصات عمومی"/>
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 app:cardElevation="3dp">
 
@@ -108,13 +107,15 @@
                             android:id="@+id/tv_brand__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,13 +153,15 @@
                             android:id="@+id/tv_year__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -196,13 +199,15 @@
                             android:id="@+id/tv_phone_size__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -240,13 +245,15 @@
                             android:id="@+id/tv_weight__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -284,13 +291,15 @@
                             android:id="@+id/tv_sim_number__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -328,13 +337,15 @@
                             android:id="@+id/tv_sim_size__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -348,9 +359,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/gray_dark"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="@dimen/title_size"
                 android:text="سخت افزار"/>
@@ -358,7 +368,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 app:cardElevation="3dp">
 
@@ -393,13 +403,15 @@
                             android:id="@+id/tv_storage__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -437,13 +449,15 @@
                             android:id="@+id/tv_ram_size__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -481,13 +495,15 @@
                             android:id="@+id/tv_cpu_chip__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -525,13 +541,15 @@
                             android:id="@+id/tv_cpu_name__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -569,13 +587,15 @@
                             android:id="@+id/tv_cpu_type__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -613,13 +633,15 @@
                             android:id="@+id/tv_cpu_frequency__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -657,13 +679,15 @@
                             android:id="@+id/tv_gpu__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -676,7 +700,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/gray_dark"
                 android:textStyle="bold"
@@ -686,7 +709,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 app:cardElevation="3dp">
 
@@ -721,13 +744,15 @@
                             android:id="@+id/tv_screen_type__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -765,13 +790,15 @@
                             android:id="@+id/tv_screen_size__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -809,13 +836,15 @@
                             android:id="@+id/tv_phone_size__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -853,13 +882,15 @@
                             android:id="@+id/tv_screen_pixel__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -872,7 +903,6 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:textColor="@color/gray_dark"
             android:textStyle="bold"
@@ -882,7 +912,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 app:cardElevation="3dp">
 
@@ -917,13 +947,15 @@
                             android:id="@+id/tv_camera_main__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -961,13 +993,15 @@
                             android:id="@+id/tv_camera_front__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1005,13 +1039,15 @@
                             android:id="@+id/tv_camera_filmed__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1024,7 +1060,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/gray_dark"
                 android:textStyle="bold"
@@ -1034,8 +1069,8 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
                 app:cardElevation="3dp">
 
                 <LinearLayout
@@ -1069,13 +1104,15 @@
                             android:id="@+id/tv_os__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1113,13 +1150,15 @@
                             android:id="@+id/tv_battery__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1157,13 +1196,15 @@
                             android:id="@+id/tv_sensors__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1201,13 +1242,15 @@
                             android:id="@+id/tv_features__detail_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="180dp"
                             android:layout_marginStart="8dp"
                             android:text="-"
+                            android:textAlignment="viewEnd"
                             android:textDirection="rtl"
                             android:textSize="@dimen/item_size_detail"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
