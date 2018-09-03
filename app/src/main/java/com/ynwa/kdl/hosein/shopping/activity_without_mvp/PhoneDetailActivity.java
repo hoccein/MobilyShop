@@ -17,6 +17,8 @@ import butterknife.OnClick;
 
 public class PhoneDetailActivity extends AppCompatActivity {
 
+    private static final int MAX_OF_STRING_SIZE = 35;
+
     @BindView(R.id.iv_close_detail_activity)
     ImageView ivClose;
     @BindView(R.id.tv_title_detail_activity)
@@ -95,7 +97,9 @@ public class PhoneDetailActivity extends AppCompatActivity {
         tvStorage.setText(phone.getDetail().getStorageSize());
         tvRamSize.setText(phone.getDetail().getRamSize());
         tvCpuChip.setText(phone.getDetail().getCpuChip());
-        tvCpuName.setText(phone.getDetail().getCpuName());
+        tvCpuName.setText(
+                MyUtils.breakLargeString(phone.getDetail().getCpuName(), MAX_OF_STRING_SIZE)
+        );
         tvCpuType.setText(phone.getDetail().getCpuType());
         tvCpuFreq.setText(phone.getDetail().getCpuFrequency());
         tvGpu.setText(phone.getDetail().getGpu());
@@ -106,19 +110,31 @@ public class PhoneDetailActivity extends AppCompatActivity {
 
         tvCameraMain.setText(phone.getDetail().getCameraMain());
         tvCamerafront.setText(phone.getDetail().getCameraFront());
-        tvCameraFilmed.setText(phone.getDetail().getCameraFilmed());
+        tvCameraFilmed.setText(
+                MyUtils.breakLargeString(phone.getDetail().getCameraFilmed(), MAX_OF_STRING_SIZE)
+        );
 
         tvOs.setText(phone.getDetail().getOs());
         tvBattery.setText(phone.getDetail().getBattery());
 
-        tvSensors.setText("");
-        for (String sensor : phone.getDetail().getSensors()){
-            tvSensors.append(sensor+ "\n");
+        if (!phone.getDetail().getSensors().isEmpty() &&
+            !phone.getDetail().getSensors().get(0).equals(""))
+        {
+            tvSensors.setText("");
+            for (String sensor : phone.getDetail().getSensors()) {
+                sensor = MyUtils.breakLargeString(sensor, MAX_OF_STRING_SIZE);
+                tvSensors.append("- " + sensor + "\n");
+            }
         }
 
-        tvFeatures.setText("");
-        for (String feature : phone.getDetail().getFeatures()){
-            tvFeatures.append(feature+ "\n");
+        if (!phone.getDetail().getFeatures().isEmpty() &&
+            !phone.getDetail().getFeatures().get(0).equals(""))
+        {
+            tvFeatures.setText("");
+            for (String feature : phone.getDetail().getFeatures()) {
+                feature = MyUtils.breakLargeString(feature, MAX_OF_STRING_SIZE);
+                tvFeatures.append("- " + feature + "\n");
+            }
         }
 
     }

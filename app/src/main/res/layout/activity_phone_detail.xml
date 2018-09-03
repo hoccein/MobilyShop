@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/iv_close_detail_activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
@@ -35,10 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/iv_close_detail_activity"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="25dp"
                 android:textColor="@color/gray"
                 android:textStyle="bold"
-                android:textSize="16sp"/>
+                android:textSize="18sp"/>
 
         </RelativeLayout>
 
@@ -701,7 +701,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/gray_dark"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="@dimen/title_size"
                 android:text="صفحه نمایش"/>
@@ -904,7 +904,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textColor="@color/gray_dark"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             android:textSize="@dimen/title_size"
             android:text="دوربین"/>
@@ -1061,7 +1061,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/gray_dark"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="@dimen/title_size"
                 android:text="دیگر امکانات"/>
