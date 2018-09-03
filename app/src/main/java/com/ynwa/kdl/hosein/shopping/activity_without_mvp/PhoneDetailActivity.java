@@ -6,12 +6,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ynwa.kdl.hosein.shopping.R;
+import com.ynwa.kdl.hosein.shopping.mvp.profile.ProfileActivity;
+import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.ynwa.kdl.hosein.shopping.mvp.profile.ProfileActivity.PHONE_PROFILE;
+
 public class PhoneDetailActivity extends AppCompatActivity {
+
+    public static final String PHONE_DETAIL ="detail_PhoneDetailActivity";
 
 
     @BindView(R.id.iv_close_detail_activity)
@@ -19,6 +25,8 @@ public class PhoneDetailActivity extends AppCompatActivity {
     @BindView(R.id.tv_title_detail_activity)
     TextView tvName;
 
+    @BindView(R.id.tv_brand__detail_activity)
+    TextView tvBrand;
     @BindView(R.id.tv_year__detail_activity)
     TextView tvYear;
     @BindView(R.id.tv_phone_size__detail_activity)
@@ -75,6 +83,46 @@ public class PhoneDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone_detail);
         ButterKnife.bind(this);
 
+        PhoneParcel phone = getIntent().getParcelableExtra(ProfileActivity.PHONE_PROFILE);
+
+
+        tvName.setText(phone.getName());
+
+        tvBrand.setText(phone.getBrand());
+        tvYear.setText(String.valueOf(phone.getYear()));
+        tvPhoneSize.setText(phone.getDetail().getPhoneSize());
+        tvWeight.setText(phone.getDetail().getWeight());
+        tvSimNumber.setText(phone.getDetail().getSimNumber());
+        tvSimSize.setText(phone.getDetail().getSimSize());
+
+        tvStorage.setText(phone.getDetail().getStorageSize());
+        tvRamSize.setText(phone.getDetail().getRamSize());
+        tvCpuChip.setText(phone.getDetail().getCpuChip());
+        tvCpuName.setText(phone.getDetail().getCpuName());
+        tvCpuType.setText(phone.getDetail().getCpuType());
+        tvCpuFreq.setText(phone.getDetail().getCpuFrequency());
+        tvGpu.setText(phone.getDetail().getGpu());
+
+        tvScreenType.setText(phone.getDetail().getScreenType());
+        tvScreenSize.setText(phone.getDetail().getScreenSize());
+        tvScreenPixel.setText(phone.getDetail().getScreenPixel());
+
+        tvCameraMain.setText(phone.getDetail().getCameraMain());
+        tvCamerafront.setText(phone.getDetail().getCameraFront());
+        tvCameraFilmed.setText(phone.getDetail().getCameraFilmed());
+
+        tvOs.setText(phone.getDetail().getOs());
+        tvBattery.setText(phone.getDetail().getBattery());
+
+        tvSensors.setText("");
+        for (String sensor : phone.getDetail().getSensors()){
+            tvSensors.append(sensor+ "\n");
+        }
+
+        tvFeatures.setText("");
+        for (String feature : phone.getDetail().getFeatures()){
+            tvFeatures.append(feature+ "\n");
+        }
 
     }
 
