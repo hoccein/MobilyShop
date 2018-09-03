@@ -1,25 +1,19 @@
 package com.ynwa.kdl.hosein.shopping.mvp.profile;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rd.PageIndicatorView;
 import com.ynwa.kdl.hosein.shopping.MyUtils;
 import com.ynwa.kdl.hosein.shopping.R;
 import com.ynwa.kdl.hosein.shopping.adapter.CustomViewPagerAdapter;
 import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -127,8 +121,8 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
 
         if (scrollRange == -1) {
             scrollRange = appBarLayout.getTotalScrollRange();
-            icBack.setColorFilter( getResources().getColor(R.color.gray_icon) );
-            icBuyBasket.setColorFilter( getResources().getColor(R.color.gray_icon) );
+            icBack.setColorFilter( getResources().getColor(R.color.gray_toolbar) );
+            icBuyBasket.setColorFilter( getResources().getColor(R.color.gray_toolbar) );
         }
         if (scrollRange + verticalOffset == 0) {
             //collapse map
@@ -141,8 +135,8 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
             //expanded map
             //TODO: change share icon color - set dark share icon
             isShow = false;
-            icBack.setColorFilter( getResources().getColor(R.color.gray_icon) );
-            icBuyBasket.setColorFilter( getResources().getColor(R.color.gray_icon) );
+            icBack.setColorFilter( getResources().getColor(R.color.gray_toolbar) );
+            icBuyBasket.setColorFilter( getResources().getColor(R.color.gray_toolbar) );
         }
 
     }

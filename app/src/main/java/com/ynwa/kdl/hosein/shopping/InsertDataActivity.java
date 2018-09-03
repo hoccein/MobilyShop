@@ -160,12 +160,12 @@ public class InsertDataActivity extends AppCompatActivity {
         phoneDAO.update(phone);*/
 
 
-        //printData( phoneDAO.findAllPhones() );
+        printData( phoneDAO.findAllPhones() );
 
         // phoneDAO.deletePhoneById( );
 
 
-        MyApiService service = RetrofitClient.getClient().create(MyApiService.class);
+        /*MyApiService service = RetrofitClient.getClient().create(MyApiService.class);
         Call<PhoneApi> call = service.getPhones();
         call.enqueue(new Callback<PhoneApi>() {
             @Override
@@ -177,7 +177,7 @@ public class InsertDataActivity extends AppCompatActivity {
             public void onFailure(Call<PhoneApi> call, Throwable t) {
                 Log.i("myapi", "onFailure message: "+ t.getMessage());
             }
-        });
+        });*/
     }
 
     public void update(){
@@ -210,7 +210,8 @@ public class InsertDataActivity extends AppCompatActivity {
                 Log.i(TAG, "imgs size: "+ p.getOtherImg().size());
                 Log.i(TAG, "color size: "+ p.getColor().size());
                 Log.i(TAG, "detail: "+ p.getDetail());
-                Log.i(TAG, "sensor size: "+ p.getDetail().getSensors().size());
+                Log.i(TAG, "ram size: "+ p.getDetail().getRamSize());
+                Log.i(TAG, "ram type: "+ p.getDetail().getRamType());
                 Log.i(TAG, "--------------------------------------------");
                // Log.i(TAG, p.getDetail().toString());
             }

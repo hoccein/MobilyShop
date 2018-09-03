@@ -21,8 +21,9 @@
         </activity>
         <activity android:name=".mvp.login.LoginActivity" />
         <activity android:name=".mvp.signup.SignUpActivity" />
-        <activity android:name=".InsertDataActivity" ></activity>
-        <activity android:name=".mvp.profile.ProfileActivity"></activity>
+        <activity android:name=".InsertDataActivity" />
+        <activity android:name=".mvp.profile.ProfileActivity" />
+        <activity android:name=".activity_without_mvp.PhoneDetailActivity"></activity>
     </application>
 
 </manifest>
