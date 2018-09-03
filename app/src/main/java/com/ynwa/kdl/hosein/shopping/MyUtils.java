@@ -190,5 +190,28 @@ public class MyUtils {
         return random.nextInt(max);
     }
 
+    public static String breakingLargeString(String str, int maxAllowedLength){
+        String finalString = "";
+        int initIndex = 0;
+
+        if (str.length() > maxAllowedLength)
+        {
+            int breakingNumbers = (str.length()/maxAllowedLength) + 1;
+            for (int i = 0; i < breakingNumbers; i++)
+            {
+                if (i == breakingNumbers-1){
+                    finalString += str.substring(initIndex, str.length());
+                }
+                else {
+                    finalString += str.substring(initIndex, initIndex + maxAllowedLength);
+                    finalString += " \n ";
+                    initIndex += maxAllowedLength;
+                }
+            }
+            return finalString;
+        }
+        return str;
+    }
+
 
 }

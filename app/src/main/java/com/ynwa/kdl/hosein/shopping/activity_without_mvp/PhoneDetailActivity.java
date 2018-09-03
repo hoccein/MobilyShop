@@ -98,7 +98,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         tvRamSize.setText(phone.getDetail().getRamSize());
         tvCpuChip.setText(phone.getDetail().getCpuChip());
         tvCpuName.setText(
-                MyUtils.breakLargeString(phone.getDetail().getCpuName(), MAX_OF_STRING_SIZE)
+                MyUtils.breakingLargeString(phone.getDetail().getCpuName(), MAX_OF_STRING_SIZE)
         );
         tvCpuType.setText(phone.getDetail().getCpuType());
         tvCpuFreq.setText(phone.getDetail().getCpuFrequency());
@@ -111,7 +111,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         tvCameraMain.setText(phone.getDetail().getCameraMain());
         tvCamerafront.setText(phone.getDetail().getCameraFront());
         tvCameraFilmed.setText(
-                MyUtils.breakLargeString(phone.getDetail().getCameraFilmed(), MAX_OF_STRING_SIZE)
+                MyUtils.breakingLargeString(phone.getDetail().getCameraFilmed(), MAX_OF_STRING_SIZE)
         );
 
         tvOs.setText(phone.getDetail().getOs());
@@ -122,7 +122,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         {
             tvSensors.setText("");
             for (String sensor : phone.getDetail().getSensors()) {
-                sensor = MyUtils.breakLargeString(sensor, MAX_OF_STRING_SIZE);
+                sensor = MyUtils.breakingLargeString(sensor, MAX_OF_STRING_SIZE);
                 tvSensors.append("- " + sensor + "\n");
             }
         }
@@ -132,7 +132,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         {
             tvFeatures.setText("");
             for (String feature : phone.getDetail().getFeatures()) {
-                feature = MyUtils.breakLargeString(feature, MAX_OF_STRING_SIZE);
+                feature = MyUtils.breakingLargeString(feature, MAX_OF_STRING_SIZE);
                 tvFeatures.append("- " + feature + "\n");
             }
         }
