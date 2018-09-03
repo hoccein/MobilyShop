@@ -7,4 +7,7 @@
     <!-- sign up  items -->
     <dimen name="padding_EditText_SignUp">7dp</dimen>
     <dimen name="margin_top_TextInputEditText">5dp</dimen>
+
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="item_size">14sp</dimen>
 </resources>
