@@ -101,7 +101,7 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
                     Toast.makeText(context, ""+ item.getName(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, ProfileActivity.class);
                     PhoneParcel phoneParcel = convertPhoneTOPhoneParcel(item);
-                    intent.putExtra(ProfileActivity.PHONE_PROFILE, phoneParcel);
+                    intent.putExtra(MyUtils.PHONE_ITEM_Extera, phoneParcel);
                     context.startActivity(intent);
                 }
             });

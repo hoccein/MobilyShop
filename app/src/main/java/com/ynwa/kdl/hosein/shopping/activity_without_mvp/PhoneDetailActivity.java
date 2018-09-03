@@ -5,20 +5,17 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ynwa.kdl.hosein.shopping.MyUtils;
 import com.ynwa.kdl.hosein.shopping.R;
-import com.ynwa.kdl.hosein.shopping.mvp.profile.ProfileActivity;
 import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.ynwa.kdl.hosein.shopping.mvp.profile.ProfileActivity.PHONE_PROFILE;
+
 
 public class PhoneDetailActivity extends AppCompatActivity {
-
-    public static final String PHONE_DETAIL ="detail_PhoneDetailActivity";
-
 
     @BindView(R.id.iv_close_detail_activity)
     ImageView ivClose;
@@ -83,7 +80,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone_detail);
         ButterKnife.bind(this);
 
-        PhoneParcel phone = getIntent().getParcelableExtra(ProfileActivity.PHONE_PROFILE);
+        PhoneParcel phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_Extera);
 
 
         tvName.setText(phone.getName());

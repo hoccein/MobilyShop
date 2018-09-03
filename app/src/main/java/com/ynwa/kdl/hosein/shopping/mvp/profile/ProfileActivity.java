@@ -23,7 +23,6 @@ import butterknife.OnClick;
 
 public class ProfileActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener{
 
-    public static final String PHONE_PROFILE = "phone_item_profile";
 
     private PhoneParcel phone;
 
@@ -84,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
 
         appBar.addOnOffsetChangedListener(this);
 
-        phone = getIntent().getParcelableExtra(PHONE_PROFILE);
+        phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_Extera);
 
         viewPager.setAdapter(new CustomViewPagerAdapter(this, phone.getOtherImg()));
 
@@ -124,7 +123,7 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
     @OnClick(R.id.tv_more_detail__profile_activity)
     public void tvMoreDetail(){
         Intent intent = new Intent(this, PhoneDetailActivity.class);
-        intent.putExtra(PHONE_PROFILE, phone);
+        intent.putExtra(MyUtils.PHONE_ITEM_Extera, phone);
         startActivity(intent);
     }
 

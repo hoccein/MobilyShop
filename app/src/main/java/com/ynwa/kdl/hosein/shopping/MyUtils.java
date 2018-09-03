@@ -31,6 +31,8 @@ public class MyUtils {
     private static final String PREF_NAME = "user_name";
     private static final String PREF_EMAIL = "user_email";
 
+    public static final String PHONE_ITEM_Extera = "phone_item_extera_intent";
+
     public static Random random = new Random();
 
 
