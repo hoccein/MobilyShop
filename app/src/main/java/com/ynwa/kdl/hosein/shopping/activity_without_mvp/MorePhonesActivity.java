@@ -1,5 +1,6 @@
 package com.ynwa.kdl.hosein.shopping.activity_without_mvp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -11,5 +12,7 @@ public class MorePhonesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_phones);
+
+
     }
 }

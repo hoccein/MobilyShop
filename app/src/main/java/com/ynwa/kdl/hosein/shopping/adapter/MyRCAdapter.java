@@ -28,7 +28,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.RealmResults;
 
 public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
 
@@ -101,7 +100,7 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
                     Toast.makeText(context, ""+ item.getName(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, ProfileActivity.class);
                     PhoneParcel phoneParcel = convertPhoneTOPhoneParcel(item);
-                    intent.putExtra(MyUtils.PHONE_ITEM_Extera, phoneParcel);
+                    intent.putExtra(MyUtils.PHONE_ITEM_EXTRA, phoneParcel);
                     context.startActivity(intent);
                 }
             });

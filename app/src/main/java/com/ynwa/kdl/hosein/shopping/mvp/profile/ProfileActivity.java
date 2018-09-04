@@ -83,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
 
         appBar.addOnOffsetChangedListener(this);
 
-        phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_Extera);
+        phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_EXTRA);
 
         viewPager.setAdapter(new CustomViewPagerAdapter(this, phone.getOtherImg()));
 
@@ -123,7 +123,7 @@ public class ProfileActivity extends AppCompatActivity implements AppBarLayout.O
     @OnClick(R.id.tv_more_detail__profile_activity)
     public void tvMoreDetail(){
         Intent intent = new Intent(this, PhoneDetailActivity.class);
-        intent.putExtra(MyUtils.PHONE_ITEM_Extera, phone);
+        intent.putExtra(MyUtils.PHONE_ITEM_EXTRA, phone);
         startActivity(intent);
     }
 

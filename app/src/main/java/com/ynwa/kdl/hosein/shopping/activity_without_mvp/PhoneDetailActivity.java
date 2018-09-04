@@ -82,7 +82,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone_detail);
         ButterKnife.bind(this);
 
-        PhoneParcel phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_Extera);
+        PhoneParcel phone = getIntent().getParcelableExtra(MyUtils.PHONE_ITEM_EXTRA);
 
 
         tvName.setText(phone.getName());
