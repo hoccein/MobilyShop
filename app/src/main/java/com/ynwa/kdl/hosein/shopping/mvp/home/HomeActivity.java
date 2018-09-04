@@ -75,8 +75,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @BindView(R.id.ib_toolbar_menu)
-    ImageButton menuToolbar;
+    @BindView(R.id.ib_toolbar_menu_home_activity)
+    ImageButton tbarMenu;
+    @BindView(R.id.ib_toolbar_search_home_activity)
+    ImageButton tbarSearch;
+    @BindView(R.id.ib_toolbar_buy_basket_home_activity)
+    ImageButton tbarBuyBasket;
+
+
+
 
     @BindView(R.id.av_load)
     AVLoadingIndicatorView avLoading;
@@ -233,7 +240,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void listeners() {
 
-        menuToolbar.setOnClickListener(this);
+        tbarMenu.setOnClickListener(this);
+        tbarSearch.setOnClickListener(this);
+        tbarBuyBasket.setOnClickListener(this);
 
         tvAll_newPhonesRow.setOnClickListener(this);
         tvAll_SuggestPhonesRow.setOnClickListener(this);
@@ -413,7 +422,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if ( v.getId() == R.id.ib_toolbar_menu)
+        if ( v.getId() == R.id.ib_toolbar_menu_home_activity)
             drawerLayout.openDrawer(drawer);
 
         mPresenter.onClick(v);

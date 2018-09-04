@@ -8,6 +8,7 @@ import android.view.View;
 import com.ynwa.kdl.hosein.shopping.MyUtils;
 import com.ynwa.kdl.hosein.shopping.R;
 import com.ynwa.kdl.hosein.shopping.activity_without_mvp.MorePhonesActivity;
+import com.ynwa.kdl.hosein.shopping.activity_without_mvp.SearchActivity;
 import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
 import com.ynwa.kdl.hosein.shopping.parcelable.PhonesListParcel;
 import com.ynwa.kdl.hosein.shopping.realm_db.Phone;
@@ -151,6 +152,9 @@ public class HomePresenter implements Home.Presenter {
         {
             case R.id.tv_all__new_phones_row__home_activity:
                 if (phoneParc_newPhones.size() > 0){
+                    Intent intent = new Intent(context, MorePhonesActivity.class);
+                    intent.putExtra(MyUtils.MORE_PHONES_EXTRA, new PhonesListParcel(phoneParc_newPhones));
+                    context.startActivity(intent);
                 }
                 break;
 
@@ -160,6 +164,14 @@ public class HomePresenter implements Home.Presenter {
                     intent.putExtra(MyUtils.MORE_PHONES_EXTRA, new PhonesListParcel(phoneParc_suggestPhones));
                     context.startActivity(intent);
                 }
+                break;
+
+            case R.id.ib_toolbar_buy_basket_home_activity:
+                mView.toastMessage("shopping basket");
+                break;
+
+            case R.id.ib_toolbar_search_home_activity:
+                context.startActivity(new Intent(context, SearchActivity.class));
                 break;
         }
     }
