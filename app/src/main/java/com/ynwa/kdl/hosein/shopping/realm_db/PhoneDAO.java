@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.WeakHashMap;
 
+import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
@@ -111,6 +112,15 @@ public class PhoneDAO {
 
     public Phone findPhoneById(long id){
         return realm.where(Phone.class).equalTo("id", id).findFirst();
+    }
+
+    public Phone findPhoneByName(String name){
+        return realm.where(Phone.class).equalTo("name", name).findFirst();
+    }
+
+    public List<Phone> findPhonesByName(String name){
+        return realm.where(Phone.class).like("name", "*"+ name+ "*", Case.INSENSITIVE).findAll();
+
     }
 
     public void deleteAllPhones(){
