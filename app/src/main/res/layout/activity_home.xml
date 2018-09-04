@@ -179,7 +179,7 @@
                         android:layout_marginLeft="7dp"
                         android:layout_marginTop="13dp"
                         android:padding="3dp"
-                        android:text="همه"
+                        android:text="بیشتر "
                         android:textColor="@color/blue"
                         android:textSize="14sp" />
 
@@ -217,7 +217,7 @@
                         android:layout_marginLeft="7dp"
                         android:layout_marginTop="13dp"
                         android:padding="3dp"
-                        android:text="همه"
+                        android:text="بیشتر "
                         android:textColor="@color/blue"
                         android:textSize="14sp" />
 

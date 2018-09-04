@@ -5,8 +5,12 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ynwa.kdl.hosein.shopping.parcelable.DetailParcel;
+import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
 import com.ynwa.kdl.hosein.shopping.pojo.LoginStatus;
 import com.ynwa.kdl.hosein.shopping.pojo.UserInfo;
+import com.ynwa.kdl.hosein.shopping.realm_db.Detail;
+import com.ynwa.kdl.hosein.shopping.realm_db.Phone;
 
 import java.lang.reflect.Type;
 import java.text.DecimalFormat;
@@ -212,6 +216,85 @@ public class MyUtils {
             return finalString;
         }
         return str;
+    }
+
+    public static List<PhoneParcel> convertPhonesListTOPhonesParcelList(List<Phone> phones){
+        List<PhoneParcel> list = new ArrayList<>();
+        for (Phone p : phones){
+            list.add( convertPhoneTOPhoneParcel(p) );
+        }
+        return list;
+    }
+
+    public static PhoneParcel convertPhoneTOPhoneParcel(Phone phone){
+
+        List<String> colors = new ArrayList<>();
+
+        for (int i = 0; i < phone.getColor().size(); i++) {
+            colors.add(i, phone.getColor().get(i));
+        }
+
+        List<String> otherImages = new ArrayList<>();
+        for (int i = 0; i < phone.getOtherImg().size(); i++) {
+            otherImages.add(i, phone.getOtherImg().get(i));
+        }
+
+        DetailParcel detail = convertDetailToDetailParcelabe(phone.getDetail());
+
+        PhoneParcel phoneParcel = new PhoneParcel(
+                phone.getId(),
+                phone.getName(),
+                phone.getBrand(),
+                phone.getDesc(),
+                phone.getImage(),
+                phone.getYear(),
+                phone.getPrice(),
+                colors,
+                detail,
+                otherImages
+        );
+        return phoneParcel;
+    }
+
+    public static DetailParcel convertDetailToDetailParcelabe(Detail detail){
+
+        List<String> sensors = new ArrayList<>();
+        for (int i = 0; i < detail.getSensors().size(); i++) {
+            sensors.add(i, detail.getSensors().get(i));
+        }
+
+        List<String> features = new ArrayList<>();
+        for (int i = 0; i < detail.getFeatures().size(); i++) {
+            features.add(i, detail.getFeatures().get(i));
+        }
+
+        DetailParcel parcel = new DetailParcel();
+        parcel.setId( detail.getId() );
+        parcel.setPhoneSize( detail.getPhoneSize() );
+        parcel.setSimSize( detail.getSimSize() );
+        parcel.setWeight( detail.getWeight() );
+        parcel.setSimNumber( detail.getSimNumber() );
+        parcel.setRamSize( detail.getRamSize() );
+        parcel.setRamType( detail.getRamType() );
+        parcel.setStorageSize( detail.getStorageSize() );
+        parcel.setCpuChip( detail.getCpuChip() );
+        parcel.setCpuName( detail.getCpuName() );
+        parcel.setCpuType( detail.getCpuType() );
+        parcel.setCpuFrequency( detail.getCpuFrequency() );
+        parcel.setGpu( detail.getGpu() );
+        parcel.setScreenType( detail.getScreenType() );
+        parcel.setScreenSize( detail.getScreenSize() );
+        parcel.setScreenResolution( detail.getScreenResolution() );
+        parcel.setScreenPixel( detail.getScreenPixel() );
+        parcel.setCameraFront( detail.getCameraFront() );
+        parcel.setCameraMain( detail.getCameraMain() );
+        parcel.setCameraFilmed( detail.getCameraFilmed() );
+        parcel.setSensors( sensors );
+        parcel.setOs( detail.getOs() );
+        parcel.setBattery( detail.getBattery() );
+        parcel.setFeatures( features );
+
+        return  parcel;
     }
 
 

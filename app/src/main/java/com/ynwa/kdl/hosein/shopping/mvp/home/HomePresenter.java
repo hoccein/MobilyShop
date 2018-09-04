@@ -2,7 +2,14 @@ package com.ynwa.kdl.hosein.shopping.mvp.home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 
+import com.ynwa.kdl.hosein.shopping.MyUtils;
+import com.ynwa.kdl.hosein.shopping.R;
+import com.ynwa.kdl.hosein.shopping.activity_without_mvp.MorePhonesActivity;
+import com.ynwa.kdl.hosein.shopping.parcelable.PhoneParcel;
+import com.ynwa.kdl.hosein.shopping.parcelable.PhonesListParcel;
 import com.ynwa.kdl.hosein.shopping.realm_db.Phone;
 import com.ynwa.kdl.hosein.shopping.retrofit.ApiServiceWalMarket;
 import com.ynwa.kdl.hosein.shopping.retrofit.model.Search.Search;
@@ -24,6 +31,9 @@ public class HomePresenter implements Home.Presenter {
     private Home.View mView;
     private Home.Model mModel ;
 
+    private List<PhoneParcel> phoneParc_newPhones;
+    private List<PhoneParcel> phoneParc_suggestPhones;
+
 
     public HomePresenter(Context context, Home.View mView) {
         this.context = context;
@@ -40,6 +50,7 @@ public class HomePresenter implements Home.Presenter {
             @Override
             public void allPhones(RealmResults<Phone> phones) {
                 if (phones.size() > 0){
+                    phoneParc_newPhones = MyUtils.convertPhonesListTOPhonesParcelList(phones);
                     mView.showNewPhones(phones);
                 }
             }
@@ -51,7 +62,7 @@ public class HomePresenter implements Home.Presenter {
         mModel.fetchSuggestPhones(new Home.Model.CallbackRandomPhones() {
             @Override
             public void allPhones(List<Phone> phones) {
-
+                phoneParc_suggestPhones = MyUtils.convertPhonesListTOPhonesParcelList(phones);
                 mView.showSuggestPhones(phones);
             }
         });
@@ -131,6 +142,26 @@ public class HomePresenter implements Home.Presenter {
         {
             mView.toastMessage("عدم ارتباط با سرور");
         }*/
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId())
+        {
+            case R.id.tv_all__new_phones_row__home_activity:
+                if (phoneParc_newPhones.size() > 0){
+                }
+                break;
+
+            case R.id.tv_all__suggest_phones_row__home_activity:
+                if (phoneParc_suggestPhones.size() > 0){
+                    Intent intent = new Intent(context, MorePhonesActivity.class);
+                    intent.putExtra(MyUtils.MORE_PHONES_EXTRA, new PhonesListParcel(phoneParc_suggestPhones));
+                    context.startActivity(intent);
+                }
+                break;
+        }
     }
 
 

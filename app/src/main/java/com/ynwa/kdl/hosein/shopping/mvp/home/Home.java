@@ -8,6 +8,8 @@ import com.ynwa.kdl.hosein.shopping.retrofit.model.paginated.Paginated;
 
 import java.util.List;
 
+import android.view.View;
+
 import io.reactivex.Flowable;
 import io.reactivex.functions.Consumer;
 import io.realm.RealmResults;
@@ -62,6 +64,8 @@ public interface Home {
         void reqTestRX(String s, ApiServiceWalMarket apiService);
         void reqDataFromServerRX(String s);
         void reqDataFromServer();
+
+        void onClick(android.view.View v);
 
     }
 }

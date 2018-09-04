@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -104,7 +103,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @BindView(R.id.nav_drawer)
      View nav_drawer_layout;
-
 
 
     @Inject
@@ -234,7 +232,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void listeners() {
+
         menuToolbar.setOnClickListener(this);
+
+        tvAll_newPhonesRow.setOnClickListener(this);
+        tvAll_SuggestPhonesRow.setOnClickListener(this);
     }
 
     @Override
@@ -411,10 +413,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if (v == menuToolbar)
-        {
+        if ( v.getId() == R.id.ib_toolbar_menu)
             drawerLayout.openDrawer(drawer);
-        }
+
+        mPresenter.onClick(v);
     }
 
     @Override

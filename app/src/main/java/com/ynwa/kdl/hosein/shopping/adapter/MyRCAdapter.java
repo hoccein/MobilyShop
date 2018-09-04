@@ -99,7 +99,7 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
                 public void onClick(View v) {
                     Toast.makeText(context, ""+ item.getName(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, ProfileActivity.class);
-                    PhoneParcel phoneParcel = convertPhoneTOPhoneParcel(item);
+                    PhoneParcel phoneParcel = MyUtils.convertPhoneTOPhoneParcel(item);
                     intent.putExtra(MyUtils.PHONE_ITEM_EXTRA, phoneParcel);
                     context.startActivity(intent);
                 }
@@ -112,76 +112,7 @@ public class MyRCAdapter extends RecyclerView.Adapter<MyRCAdapter.MyViewHolder>{
         return items.size();
     }
 
-    public PhoneParcel convertPhoneTOPhoneParcel(Phone phone){
 
-        List<String> colors = new ArrayList<>();
-
-        for (int i = 0; i < phone.getColor().size(); i++) {
-            colors.add(i, phone.getColor().get(i));
-        }
-
-        List<String> otherImages = new ArrayList<>();
-        for (int i = 0; i < phone.getOtherImg().size(); i++) {
-            otherImages.add(i, phone.getOtherImg().get(i));
-        }
-
-        DetailParcel detail = convertDetailToDetailParcelabe(phone.getDetail());
-
-        PhoneParcel phoneParcel = new PhoneParcel(
-                phone.getId(),
-                phone.getName(),
-                phone.getBrand(),
-                phone.getDesc(),
-                phone.getImage(),
-                phone.getYear(),
-                phone.getPrice(),
-                colors,
-                detail,
-                otherImages
-        );
-        return phoneParcel;
-    }
-
-    public DetailParcel convertDetailToDetailParcelabe(Detail detail){
-
-        List<String> sensors = new ArrayList<>();
-        for (int i = 0; i < detail.getSensors().size(); i++) {
-            sensors.add(i, detail.getSensors().get(i));
-        }
-
-        List<String> features = new ArrayList<>();
-        for (int i = 0; i < detail.getFeatures().size(); i++) {
-            features.add(i, detail.getFeatures().get(i));
-        }
-
-        DetailParcel parcel = new DetailParcel();
-        parcel.setId( detail.getId() );
-        parcel.setPhoneSize( detail.getPhoneSize() );
-        parcel.setSimSize( detail.getSimSize() );
-        parcel.setWeight( detail.getWeight() );
-        parcel.setSimNumber( detail.getSimNumber() );
-        parcel.setRamSize( detail.getRamSize() );
-        parcel.setRamType( detail.getRamType() );
-        parcel.setStorageSize( detail.getStorageSize() );
-        parcel.setCpuChip( detail.getCpuChip() );
-        parcel.setCpuName( detail.getCpuName() );
-        parcel.setCpuType( detail.getCpuType() );
-        parcel.setCpuFrequency( detail.getCpuFrequency() );
-        parcel.setGpu( detail.getGpu() );
-        parcel.setScreenType( detail.getScreenType() );
-        parcel.setScreenSize( detail.getScreenSize() );
-        parcel.setScreenResolution( detail.getScreenResolution() );
-        parcel.setScreenPixel( detail.getScreenPixel() );
-        parcel.setCameraFront( detail.getCameraFront() );
-        parcel.setCameraMain( detail.getCameraMain() );
-        parcel.setCameraFilmed( detail.getCameraFilmed() );
-        parcel.setSensors( sensors );
-        parcel.setOs( detail.getOs() );
-        parcel.setBattery( detail.getBattery() );
-        parcel.setFeatures( features );
-
-        return  parcel;
-    }
 
     class MyViewHolder extends RecyclerView.ViewHolder  {
 
