@@ -75,7 +75,7 @@
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/ib_toolbar_menu"
+                            android:id="@+id/ib_toolbar_menu_home_activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
