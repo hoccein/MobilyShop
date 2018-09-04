@@ -24,7 +24,8 @@
         <activity android:name=".InsertDataActivity" />
         <activity android:name=".mvp.profile.ProfileActivity" />
         <activity android:name=".activity_without_mvp.PhoneDetailActivity" />
-        <activity android:name=".activity_without_mvp.MorePhonesActivity"></activity>
+        <activity android:name=".activity_without_mvp.MorePhonesActivity" />
+        <activity android:name=".activity_without_mvp.SearchActivity"></activity>
     </application>
 
 </manifest>
