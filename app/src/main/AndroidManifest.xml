@@ -23,7 +23,8 @@
         <activity android:name=".mvp.signup.SignUpActivity" />
         <activity android:name=".InsertDataActivity" />
         <activity android:name=".mvp.profile.ProfileActivity" />
-        <activity android:name=".activity_without_mvp.PhoneDetailActivity"></activity>
+        <activity android:name=".activity_without_mvp.PhoneDetailActivity" />
+        <activity android:name=".activity_without_mvp.MorePhonesActivity"></activity>
     </application>
 
 </manifest>
